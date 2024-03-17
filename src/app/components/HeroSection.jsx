@@ -38,7 +38,7 @@ const HeroSection = () => {
             Passionate about crafting seamless digital experiences, I specialize
             in frontend and mobile development. With a keen eye for detail and a
             knack for problem-solving, I bring creativity and efficiency to
-            every project. Let's collaborate and bring your ideas to life!
+            every project. Let&apos;s collaborate and bring your ideas to life!
           </p>
 
           <div>
