@@ -9,34 +9,47 @@ const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    // const data = {
-    //   email: e.target.email.value,
-    //   subject: e.target.subject.value,
-    //   message: e.target.message.value,
-    // };
-    // const JSONdata = JSON.stringify(data);
-    // const endpoint = "/api/send";
+    e.preventDefault();
 
-    // // Form the request for sending data to the server.
-    // const options = {
-    //   // The method is POST because we are sending data.
-    //   method: "POST",
-    //   // Tell the server we're sending JSON.
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   // Body of the request is the JSON data we created above.
-    //   body: JSONdata,
-    // };
+    const formData = {
+      from_email: e.target.email.value,
+      subject: e.target.subject.value,
+      message: e.target.message.value,
+      to_email: "shedrachjonah11@gmail.com"
+    };
 
-    // const response = await fetch(endpoint, options);
-    // const resData = await response.json();
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'service_ux66ewv',
+          template_id: 'template_jpbfhnp',
+          user_id: 'ZLTzJxP9_4n8_0ANc',
+          template_params: {
+            from_name: formData.from_email,
+            to_name: "Shedrach",
+            subject: formData.subject,
+            message: formData.message,
+            reply_to: formData.from_email,
+            to_email: formData.to_email
+          }
+        }),
+      });
 
-    // if (response.status === 200) {
-    //   console.log("Message sent.");
-    //   setEmailSubmitted(true);
-    // }
+      if (response.ok) {
+        console.log("Message sent successfully");
+        setEmailSubmitted(true);
+        e.target.reset();
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      alert("Failed to send email. Please try again later.");
+    }
   };
 
   return (
@@ -113,6 +126,7 @@ const EmailSection = () => {
               <textarea
                 name="message"
                 id="message"
+                required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Let's talk about..."
               />

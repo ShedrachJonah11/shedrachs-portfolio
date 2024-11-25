@@ -7,6 +7,25 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
+    title: "RahaPay",
+    description:
+      "A fintech mobile application for seamless payments and transfers",
+    image: "/images/rahapay.png",
+    tag: ["All", "Mobile"],
+    gitUrl: "/",
+    previewUrl: "https://www.rahapay.com/",
+  },
+  {
+    id: 2,
+    title: "Pro Announce",
+    description: "A mobile platform connecting developers with opportunities",
+    image: "/images/proAnnounce.png",
+    tag: ["All", "Mobile"],
+    gitUrl: "/",
+    previewUrl: "/",
+  },
+  {
+    id: 4,
     title: "KASUWA E-farm Application",
     description:
       "An electronic farm application for buying and selling products",
@@ -16,7 +35,7 @@ const projectsData = [
     previewUrl: "https://e-gona.vercel.app/",
   },
   {
-    id: 2,
+    id: 5,
     title: "BillsLink",
     description: "Pay your bills at afforable prices.",
     image: "/images/projects/4.png",
@@ -26,7 +45,16 @@ const projectsData = [
       "https://play.google.com/store/apps/details?id=com.shaydee11.billslink",
   },
   {
-    id: 3,
+    id: 8,
+    title: "Krypta Pay",
+    description: "Cryptocurrency payment solution for mobile transactions",
+    image: "/images/kryptapay.png",
+    tag: ["All", "Mobile"],
+    gitUrl: "/",
+    previewUrl: "https://krypta-pay.com/en/",
+  },
+  {
+    id: 10,
     title: "SummaryHub.ai",
     description:
       "Get instant summaries and Document summarization with just a click.",
@@ -36,7 +64,7 @@ const projectsData = [
     previewUrl: "https://summary-hub.vercel.app/",
   },
   {
-    id: 4,
+    id: 11,
     title: "Vetmemos",
     description:
       "VetMemos - A platform for structured medical notes from your encounters, in seconds.",
@@ -46,7 +74,7 @@ const projectsData = [
     previewUrl: "https://vetmemos.com",
   },
   {
-    id: 4,
+    id: 12,
     title: "mpilo",
     description:
       "Mpilo is an innovative scribing assistant, specifically designed to revolutionize the way healthcare professionals create SOAP notes during consultations.",
@@ -56,7 +84,7 @@ const projectsData = [
     previewUrl: "https://mpilo-67t3.vercel.app/",
   },
   {
-    id: 6,
+    id: 13,
     title: "ChatAVA - Chat Assistant",
     description: "",
     image: "/images/projects/6.png",
